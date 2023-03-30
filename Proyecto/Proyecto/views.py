@@ -27,9 +27,19 @@ def saluda_nombre(request, nombre):
 
 def probando_template(request):
     mi_html = open(
+        "/Users/jorgeangelpaez/Documents/GitHub/proyecto_Django/Proyecto/Proyecto/templates/template1.html")
+    plantilla = Template(mi_html.read())
+    mi_html.close()
+    mi_contexto = Context({"my_name": "Jorge", })
+    documento = plantilla.render(mi_contexto)
+    return HttpResponse(documento)
+
+
+def inicio(request):
+    mi_html = open(
         "/Users/jorgeangelpaez/Documents/GitHub/proyecto_Django/Proyecto/Proyecto/templates/primer_template.html")
     plantilla = Template(mi_html.read())
     mi_html.close()
-    mi_contexto = Context()
+    mi_contexto = Context({"my_name": "Jorge", })
     documento = plantilla.render(mi_contexto)
     return HttpResponse(documento)
