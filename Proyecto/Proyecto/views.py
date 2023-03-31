@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from datetime import datetime
-from django.template import Template, Context
+from django.template import Template, Context, loader
 
 
 def saluda(request):
@@ -26,12 +26,9 @@ def saluda_nombre(request, nombre):
 
 
 def probando_template(request):
-    mi_html = open(
-        "/Users/jorgeangelpaez/Documents/GitHub/proyecto_Django/Proyecto/Proyecto/templates/template1.html")
-    plantilla = Template(mi_html.read())
-    mi_html.close()
-    mi_contexto = Context({"my_name": "Jorge", })
-    documento = plantilla.render(mi_contexto)
+    plantilla = loader.get_template("template1.html")
+    documento = plantilla.render(
+        {"notas": [2, 3, 5, 9, 3, 7, 10, 4, 5, 2, 7, 8, 10, 4, 10, 5]})
     return HttpResponse(documento)
 
 
