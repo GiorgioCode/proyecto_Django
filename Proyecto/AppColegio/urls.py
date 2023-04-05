@@ -4,10 +4,9 @@ from AppColegio.views import *
 
 urlpatterns = [
     path('agrega-curso/<nombre>/<comision>/<codigo>/', curso),
-    path('lista_cursos', lista_cursos),
-    path('', inicio),
-    path('cursos/', cursos),
-    path('profesores/', profesores),
-    path('estudiantes/', estudiantes),
-    path('entregables/', entregables),
+    path('', inicio, name="Inicio"),
+    path('cursos/', cursos, name="Cursos"),
+    path('profesores/', profesores, name="Profesores"),
+    path('estudiantes/', estudiantes, name="Estudiantes"),
+    path('entregables/', entregables, name="Entregables"),
 ]

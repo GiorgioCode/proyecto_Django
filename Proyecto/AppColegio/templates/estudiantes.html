@@ -1,71 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'main.html' %} 
+{% load static %} 
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/slate/bootstrap.min.css"
-        integrity="sha384-8iuq0iaMHpnH2vSyvZMSIqQuUnQA7QM+f6srIdlgBrTSEyd//AWNMyEaSF2yPzNQ" crossorigin="anonymous">
-    {% load static %}
-    <style>
-        body {
-            min-height: 75rem;
-            padding-top: 4.5rem;
-        }
-
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-    <title>Alumnos</title>
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="http://127.0.0.1:8000/app-colegio/">DjangoPrueba</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://127.0.0.1:8000/app-colegio/">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://127.0.0.1:8000/app-colegio/estudiantes/">Estudiantes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://127.0.0.1:8000/app-colegio/profesores/">Profesores</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://127.0.0.1:8000/app-colegio/entregables/">Entregables</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://127.0.0.1:8000/app-colegio/cursos/">Cursos</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <h1>Alumnos</h1>
-    <img src="{%static 'img/estudiantes.jpeg'%}" alt="">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
+{% block contenidoQueCambia %}
+<h1>Estudiantes</h1>
+<img src="{%static 'img/estudiantes.jpeg'%}" alt="" />
+{% endblock contenidoQueCambia %}

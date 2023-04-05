@@ -16,9 +16,9 @@ def curso(self, nombre, comision, codigo):
                         """)
 
 
-def lista_cursos(self):
+def cursos(self):
     lista = Curso.objects.all()
-    return render(self, "lista_cursos.html", {"lista_cursos": lista})
+    return render(self, "cursos.html", {"cursos": lista})
 
 
 def inicio(self):
