@@ -1,11 +1,17 @@
 {% extends 'main.html' %} {% load static %} {% block contenidoQueCambia %}
-<h1>Cursos</h1>
-<ul>
-    {% for curso in cursos %}
-    <li>
-        Curso: {{curso.nombre}} - Comision: {{curso.comision}}-
-        Codigo:{{curso.codigo}}
-    </li>
-    {% endfor %}
-</ul>
+<div class="container">
+    <h1>Cursos</h1>
+    <ul>
+        {% for curso in cursos %}
+        <li>
+            Curso: {{curso.nombre}}
+        </li>
+        {% endfor %}
+    </ul>
+
+
+    <a href="{% url 'CursoFormulario' %}" class="btn btn-primary">Agregar Curso</a>
+
+</div>
+
 {% endblock contenidoQueCambia %}

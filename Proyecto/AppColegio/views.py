@@ -1,24 +1,7 @@
 from django.shortcuts import render
-from .models import Curso
+from .models import Curso, Estudiante, Entregable, Profesor
 from django.http import HttpResponse
 # Create your views here.
-
-
-def curso(self, nombre, comision, codigo):
-    curso = Curso(nombre=nombre, comision=comision, codigo=codigo)
-    curso.save()
-
-    return HttpResponse(f"""
-                        <h2> Curso: {curso.nombre}</h2>
-                        <hr>
-                        <h3> Comision: {curso.comision}</h2>
-                        <h3> Codigo: {curso.codigo}</h2>
-                        """)
-
-
-def cursos(self):
-    lista = Curso.objects.all()
-    return render(self, "cursos.html", {"cursos": lista})
 
 
 def inicio(self):
@@ -26,16 +9,30 @@ def inicio(self):
 
 
 def cursos(self):
-    return render(self, "cursos.html")
+    lista_cursos = Curso.objects.all()
+    return render(self, "cursos.html", {"cursos": lista_cursos})
 
 
 def profesores(self):
-    return render(self, "profesores.html")
+    lista_profesores = Profesor.objects.all()
+    return render(self, "profesores.html", {"profesores": lista_profesores})
 
 
-def estudiantes(self):
-    return render(self, "estudiantes.html")
+def estudiante(self):
+    lista_estudiantes = Estudiante.objects.all()
+    return render(self, "estudiantes.html", {"estudiantes": lista_estudiantes})
 
 
 def entregables(self):
-    return render(self, "entregables.html")
+    lista_entregables = Entregable.objects.all()
+    return render(self, "entregables.html", {"entregables": lista_entregables})
+
+
+def cursoFormulario(request):
+    if request.method == 'POST':
+        curso = Curso(
+            nombre=request.POST['nombre'], comision=request.POST['comision'], codigo=request.POST['codigo'])
+        curso.save()
+        lista_cursos = Curso.objects.all()
+        return render(request, 'cursos.html', {"cursos": lista_cursos})
+    return render(request, "cursoFormulario.html")

@@ -1,4 +1,14 @@
 {% extends 'main.html' %} {% load static %} {% block contenidoQueCambia %}
-<h1>Profesores</h1>
 
+<div class="container">
+
+    <h1>Profesores</h1>
+    <ul>
+        {% for profesor in profesores %}
+        <li>
+            {{profesor.apellido}} {{profesor.nombre}}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock contenidoQueCambia %}

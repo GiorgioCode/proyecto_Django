@@ -26,6 +26,7 @@ class Profesor(models.Model):
     apellido = models.CharField(max_length=50)
     email = models.EmailField(max_length=254)
     profesion = models.CharField(max_length=50)
+    cursos = models.ManyToManyField(Curso)
 
     def __str__(self):
         return f'{self.nombre} {self.apellido}'

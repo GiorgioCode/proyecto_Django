@@ -1,7 +1,18 @@
-{% extends 'main.html' %} 
-{% load static %} 
+{% extends 'main.html' %}
+{% load static %}
 
 {% block contenidoQueCambia %}
-<h1>Estudiantes</h1>
-<img src="{%static 'img/estudiantes.jpeg'%}" alt="" />
+
+<div class="container">
+    <h1>Estudiantes</h1>
+    <img src="{%static 'img/estudiantes.jpeg'%}" alt="" />
+    <ul>
+        {% for estudiante in estudiantes %}
+        <li>
+            {{estudiante.apellido}} {{estudiante.nombre}}
+        </li>
+        {% endfor %}
+    </ul>
+
+</div>
 {% endblock contenidoQueCambia %}
