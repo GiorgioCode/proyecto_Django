@@ -1,5 +1,5 @@
 {% extends 'main.html' %} {% load static %} {% block contenidoQueCambia %}
-<div class="container">
+<!-- <div class="container">
     <h1>Formulario de Cursos</h1>
     <form action="{% url 'CursoFormulario' %}" method="POST">
         {% csrf_token %}
@@ -20,6 +20,20 @@
             <button type="submit" class="btn btn-primary">Crear</button>
         </div>
     </form>
-</div>
+</div> -->
+<div class="container">
+    <h1>Busqueda de Curso</h1>
+    <a href="{% url 'Cursos' %}" class="btn btn-primary">Ver Cursos</a>
+    <a href="{% url 'BusquedaComision' %}" class="btn btn-primary">Buscar Cursos</a>
 
+    <form action="{% url 'CursoFormulario' %}" method="POST" class="m-4">
+        {% csrf_token %}
+        {{miFormulario.as_div}}
+        <p>ACLARACIÓN: Se debe introducir el URL de la imagen</p>
+        <div class="col-12 m-2">
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </div>
+
+    </form>
+</div>
 {% endblock contenidoQueCambia %}

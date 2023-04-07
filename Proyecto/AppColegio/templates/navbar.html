@@ -1,7 +1,8 @@
+{% load static %}
 <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="http://127.0.0.1:8000/app-colegio/"
-            >DjangoPrueba</a
+        <a class="navbar-brand" href="{%url 'Inicio'%}"
+            ><img src="{%static 'img/codermouse.png'%}" alt="" width="180rem"/></a
         >
         <button
             class="navbar-toggler"
