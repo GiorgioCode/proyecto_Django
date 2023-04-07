@@ -1,4 +1,6 @@
-# Proyecto de prueba curso de python para desarrollo web
+# Proyecto de prueba para Curso de Python para desarrollo web
+
+![alt text](https://github.com/GiorgioCode/proyecto_Django/blob/main/instructivo/imagen1.png?raw=true "Imagen1")
 
 ## Instrucciones para Inicializar el proyecto:
 
@@ -20,6 +22,7 @@ python manage.py runserver
 ### 3. Para ingresar al administrador:
 
 1. Dirigirse al url http://127.0.0.1:8000/admin/
+   ![alt text](https://github.com/GiorgioCode/proyecto_Django/blob/main/instructivo/imagen2.png?raw=true "Imagen2")
 2. introducir las credenciales:
 
 -   nombre de usuario: **admin**
