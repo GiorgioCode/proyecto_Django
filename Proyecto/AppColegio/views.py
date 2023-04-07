@@ -3,11 +3,13 @@ from .models import Curso, Estudiante, Entregable, Profesor
 from django.http import HttpResponse
 from .forms import CursoFormulario
 from django.db.models import Q
+from datetime import datetime
 # Create your views here.
 
 
 def inicio(self):
-    return render(self, "inicio.html")
+    lista_cursos = Curso.objects.all()
+    return render(self, "inicio.html", {"cursos": lista_cursos})
 
 
 def cursos(self):
@@ -27,6 +29,7 @@ def estudiante(self):
 
 def entregables(self):
     lista_entregables = Entregable.objects.all()
+
     return render(self, "entregables.html", {"entregables": lista_entregables})
 
 
@@ -69,3 +72,7 @@ def buscar(request):
         curso = Curso.objects.filter(nombre__icontains=nombre)
         print(curso)
         return render(request, 'busquedaComision.html', {"cursos": curso})
+
+
+def index(request):
+    return render(request, 'index.html')
