@@ -1,5 +1,7 @@
 # Proyecto de prueba para Curso de Python para desarrollo web
 
+Desarrollado por Jorge Angel Paez para cumplir con los requisitos de la tercera pre-entrega de proyecto.
+
 ![alt text](https://github.com/GiorgioCode/proyecto_Django/blob/main/instructivo/imagen1.png?raw=true "Imagen1")
 
 ## Instrucciones para Inicializar el proyecto:
