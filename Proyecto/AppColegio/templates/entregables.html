@@ -3,6 +3,8 @@
 {% block contenidoQueCambia %}
 <div class="container">
     <h1>Entregables</h1>
+    <a href="{% url 'EntregableFormulario' %}" class="btn btn-primary">Crear Entregable</a>
+
     <table class="table table-striped table-hover">
         <thead>
             <tr>
@@ -16,7 +18,7 @@
             <tr>
 
                 <td>{{entregable.nombre}}</td>
-                <td>      
+                <td>
                     {{entregable.fecha_entrega}}
                 </td>
                 <td>
