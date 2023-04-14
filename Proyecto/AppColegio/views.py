@@ -39,7 +39,7 @@ def cursoFormulario(request):
         if miFormulario.is_valid():
             data = miFormulario.cleaned_data
             curso = Curso(
-                nombre=data['nombre'], comision=data['comision'], codigo=data['codigo'], imagen=data['imagen'])
+                nombre=data['nombre'], comision=data['comision'], codigo=data['codigo'], imagen=data['imagen'], estudiante=data['estudiante'])
             curso.save()
             lista_cursos = Curso.objects.all()
             return render(request, 'cursos.html', {"cursos": lista_cursos})
@@ -76,7 +76,7 @@ def profesorFormulario(request):
         if miFormulario.is_valid():
             data = miFormulario.cleaned_data
             profesor = Profesor(
-                nombre=data['nombre'], apellido=data['apellido'], email=data['email'], profesion=data['profesion'])
+                nombre=data['nombre'], apellido=data['apellido'], email=data['email'], profesion=data['profesion'], cursos=data['cursos'])
             profesor.save()
             lista_profesores = Profesor.objects.all()
             return render(request, 'profesores.html', {"profesores": lista_profesores})

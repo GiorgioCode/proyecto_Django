@@ -3,27 +3,25 @@ from .models import Entregable, Estudiante, Curso, Profesor
 from django.forms import ModelForm
 
 
-class CursoFormulario(forms.Form):
-    nombre = forms.CharField(required=True)
-    comision = forms.IntegerField(required=True)
-    codigo = forms.CharField(required=True)
-    imagen = forms.CharField(required=True)
+class CursoFormulario(ModelForm):
+    class Meta:
+        model = Curso
+        fields = ['nombre', 'comision', 'codigo', 'imagen']
 
 
-class ProfesorFormulario(forms.Form):
-    nombre = forms.CharField(required=True)
-    apellido = forms.CharField(required=True)
-    email = forms.EmailField(required=True)
-    profesion = forms.CharField(max_length=50)
+class ProfesorFormulario(ModelForm):
+    class Meta:
+        model = Profesor
+        fields = ['nombre', 'apellido', 'email', 'profesion', 'cursos']
 
 
-class EntregableFormulario(forms.Form):
-    nombre = forms.CharField(max_length=50)
-    fecha_entrega = forms.DateField()
-    entregado = forms.BooleanField(required=False)
+class EntregableFormulario(ModelForm):
+    class Meta:
+        model = Entregable
+        fields = ['nombre', 'fecha_entrega', 'entregado', 'estudiante']
 
 
 class EstudianteFormulario(ModelForm):
     class Meta:
         model = Estudiante
-        fields = ['nombre', 'apellido', 'email']
+        fields = ['nombre', 'apellido', 'email', 'cursos']
