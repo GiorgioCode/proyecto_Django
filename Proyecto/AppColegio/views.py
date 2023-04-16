@@ -76,7 +76,7 @@ def profesorFormulario(request):
         if miFormulario.is_valid():
             data = miFormulario.cleaned_data
             profesor = Profesor(
-                nombre=data['nombre'], apellido=data['apellido'], email=data['email'], profesion=data['profesion'], cursos=data['cursos'])
+                nombre=data['nombre'], apellido=data['apellido'], email=data['email'], profesion=data['profesion'])
             profesor.save()
             lista_profesores = Profesor.objects.all()
             return render(request, 'profesores.html', {"profesores": lista_profesores})

@@ -12,7 +12,7 @@ class CursoFormulario(ModelForm):
 class ProfesorFormulario(ModelForm):
     class Meta:
         model = Profesor
-        fields = ['nombre', 'apellido', 'email', 'profesion', 'cursos']
+        fields = ['nombre', 'apellido', 'email', 'profesion']
 
 
 class EntregableFormulario(ModelForm):
@@ -24,4 +24,4 @@ class EntregableFormulario(ModelForm):
 class EstudianteFormulario(ModelForm):
     class Meta:
         model = Estudiante
-        fields = ['nombre', 'apellido', 'email', 'cursos']
+        fields = ['nombre', 'apellido', 'email']
