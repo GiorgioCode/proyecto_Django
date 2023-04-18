@@ -2,7 +2,7 @@
 <div class="container">
     <h1>Busqueda de Curso</h1>
     <a href="{% url 'CursoFormulario' %}" class="btn btn-primary">Agregar Curso</a>
-    <a href="{% url 'Cursos' %}" class="btn btn-primary">Ver Cursos</a>
+    <a href="{% url 'ListaCursos' %}" class="btn btn-primary">Ver Cursos</a>
     <form action="{% url 'Buscar' %}" method="GET">
         {% csrf_token %}
         <div class="form">

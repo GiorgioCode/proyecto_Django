@@ -1,0 +1,31 @@
+{% extends 'main.html' %} {% load static %} {% block contenidoQueCambia %}
+<div class="container">
+    <h1>Eliminar Entregable</h1>
+    <a href="{% url 'CrearEntregable' %}" class="btn btn-primary">Agregar Entregable</a>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4">
+
+                <form action="{% url 'EliminarEntregable' entregable.id %}" method="POST">
+                    {% csrf_token %}
+                    Desea eliminar el Entregable {{entregable.nombre}} ?
+                    <span>
+                        <a href="{% url 'ListaEntregables'%}" class="btn btn-warning">Cancelar</a>
+                    </span>
+                    <span>
+                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                    </span>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</div>
+
+{% endblock contenidoQueCambia %}

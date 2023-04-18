@@ -1,7 +1,7 @@
 {% extends 'main.html' %} {% load static %} {% block contenidoQueCambia %}
 
 <div class="container">
-    <h1>Crear Profesor</h1>
+    <h1>Editar Profesor</h1>
     <a href="{% url 'Profesores' %}" class="btn btn-primary">Ver Profesores</a>
     {% if error %}
     <div class="alert alert-danger" role="alert">
@@ -9,13 +9,14 @@
     </div>
     {% endif %}
 
-    <form action="{% url 'ProfesorFormulario' %}" method="POST" class="m-4">
+    <form action="{% url 'EditarProfesor' id %}" method="POST" class="m-4">
         {% csrf_token %}
         {{miFormulario.as_div}}
         <div class="col-12 m-2">
-            <button type="submit" class="btn btn-primary">Crear</button>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
         </div>
 
     </form>
+
 </div>
 {% endblock contenidoQueCambia %}

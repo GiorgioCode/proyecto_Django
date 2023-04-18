@@ -1,0 +1,31 @@
+{% extends 'main.html' %} {% load static %} {% block contenidoQueCambia %}
+<div class="container">
+    <h1>Cursos</h1>
+    <a href="{% url 'CursoFormulario' %}" class="btn btn-primary">Agregar Curso</a>
+    <a href="{% url 'BusquedaComision' %}" class="btn btn-primary">Buscar Curso</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4">
+
+                <form action="{% url 'EliminarCurso' curso.id %}" method="POST">
+                    {% csrf_token %}
+                    Desea eliminar el Curso {{curso.nombre}} ?
+                    <span>
+                        <a href="{% url 'ListaCursos'%}" class="btn btn-warning">Cancelar</a>
+                    </span>
+                    <span>
+                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                    </span>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</div>
+
+{% endblock contenidoQueCambia %}
